@@ -91,7 +91,7 @@ namespace Hooks
 
 			static void InstallHooks()
 			{
-				REL::Relocation<std::uintptr_t> vtbl{ RE::Offset::PlayerCharacter::Vtbl };
+				REL::Relocation<std::uintptr_t> vtbl{ RE::VTABLE_PlayerCharacter[0] };
 				_AddObjectToContainer = vtbl.write_vfunc(0x5A, &Hook_AddObjectToContainer);
 				_PickUpObject = vtbl.write_vfunc(0xCC, &Hook_PickUpObject);
 			}
